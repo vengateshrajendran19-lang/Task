@@ -1,0 +1,57 @@
+package Departmentstore;
+
+public class Shoppingclass {
+	private String name;
+	private int quantity;
+	private float price;
+//get method	
+public String getname() {
+	return name;
+}
+public int getquantity() {
+	return quantity;
+	
+}
+public float setprice() {
+	return price;
+}
+//setter method
+public void setname(String name) {
+	this.name=name;
+}
+public void setquantity(int quantity) {
+	this.quantity=quantity;
+}
+public void setprice(float price) {
+	this.price=price;
+}
+}
+
+
+package Departmentstore;
+
+public class Callingclass extends Shoppingclass {
+public static void main(String[]args) {
+	Callingclass read=new Callingclass();
+	read.setname("iphone");
+	String Mobilename=read.getname();
+	System.out.println("Mobile name is: "+Mobilename);
+	read.setquantity(3);
+	int quantity=read.getquantity();
+	System.out.println("The quantity is: "+quantity);
+	read.setprice(44.66f);
+	float price=read.setprice();
+	System.out.println("The iphone cost is: "+price);
+	
+}
+}
+
+
+
+
+
+
+
+
+
+
