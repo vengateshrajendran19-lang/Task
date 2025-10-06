@@ -1,0 +1,39 @@
+package Collectionset;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class Linkedhashset {
+public static void main(String[]args) {
+//	collection1
+	Set<String>Mobiles=new LinkedHashSet<String>();
+	Set<String>Laptops=new LinkedHashSet<String>();
+	Mobiles.add("Iphone");
+	Mobiles.add("Samsung");
+	Mobiles.add("Vivo");
+	Mobiles.add("Oneplus");
+	Mobiles.add("Iphone");
+	
+//collection2
+	Laptops.add("Mac book");
+	Laptops.add("Hp");
+	Laptops.add("Dell");
+	Laptops.add("Acer");
+	
+//Adding elements
+	Mobiles.addAll(Laptops);
+//searching
+	
+	boolean show=Mobiles.contains("Vivo");
+	if(show) {
+		System.out.println("Vivo is available");
+	}else {
+		System.out.println("Vivo is not Available");
+	}
+//Getting all elements
+	for(String device:Mobiles) {
+		System.out.println(device);
+	}
+	
+}
+}
