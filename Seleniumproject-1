@@ -1,0 +1,103 @@
+package Seleniumconcept;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
+import java.util.ArrayList;
+
+import org.openqa.selenium.WebDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class SeleniumAuto {
+
+	public static void main(String[] args) throws InterruptedException {
+	    List<String>calling=new ArrayList<String>();
+		
+		String Url1="https://www.google.com";
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.navigate().to(Url1);
+		driver.manage().window().maximize();
+		Thread.sleep(3000);
+		String Title=driver.getTitle();
+		System.out.println("Website title is:"+Title);
+		String url=driver.getCurrentUrl();
+		System.out.println("Website Url is:"+url);
+		driver.close();
+		
+
+		String Url2="https://www.fireFox.com";
+//		WebDriverManager.chromedriver().setup();
+		WebDriver driver2=new ChromeDriver();
+		driver2.navigate().to(Url2);
+		driver2.manage().window().maximize();
+		Thread.sleep(3000);
+		String YTitle=driver2.getTitle();
+		System.out.println("Website title is:"+YTitle);
+		String urll=driver2.getCurrentUrl();
+		System.out.println("Website Url is:"+urll);
+		driver2.close();
+		
+		
+		String Url3="https://www.ucweb.com/";
+		WebDriver driver3=new ChromeDriver();
+		driver3.manage().window().maximize();
+		Thread.sleep(3000);
+		driver3.navigate().to(Url3);
+		String url3=driver3.getTitle();
+		System.out.println("Website title is:"+url3);
+		String urll3=driver3.getCurrentUrl();
+		System.out.println("Website title is:"+urll3);
+		driver3.close();
+		
+		String Url4="https://yandex.com/";
+		WebDriver driver4=new ChromeDriver();
+		driver4.navigate().to(Url4);
+		driver4.manage().window().maximize();
+		Thread.sleep(3000);
+		String url4=driver4.getTitle();
+		System.out.println("Website title is:"+url4);
+		String urll4=driver4.getCurrentUrl();
+		System.out.println("Website title is:"+urll4);
+		driver4.close();
+		
+		String Url5="https://brave.com/";
+		WebDriver driver5=new ChromeDriver();
+		driver5.navigate().to(Url5);
+		driver5.manage().window().maximize();
+		Thread.sleep(3000);
+		String url5=driver5.getTitle();
+		System.out.println("Website title is:"+url5);
+		String urll5=driver5.getCurrentUrl();
+		System.out.println("Website title is:"+urll5);
+		driver5.close();
+		
+		calling.add("https://www.google.com");
+		calling.add("https://www.fireFox.com");
+		calling.add("https://www.ucweb.com");
+		calling.add("https://yandex.com");
+		calling.add("https://brave.com");	
+		System.out.println("The URL LIST ARE GIVEN BELOW!!");
+		
+		calling.get(0);
+		System.out.println("The first URL is:"+calling.get(0));
+		
+		calling.get(1);
+		System.out.println("The Second URL is:"+calling.get(1));
+		
+		calling.get(2);
+		System.out.println("The Third URL is:"+calling.get(2));
+		
+		calling.get(3);
+		System.out.println("The fourth URL is:"+calling.get(3));
+		
+		calling.get(4);
+		System.out.println("The fiveth URL is:"+calling.get(4));
+	
+		
+		
+		
+	}
+	
+
+}
