@@ -1,0 +1,42 @@
+package Seleniumconcept;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CalcAuto {
+
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		
+		driver.get("https://testsheepnz.github.io/BasicCalculator.html");
+		WebElement Num1=driver.findElement(By.id("number1Field"));
+		Num1.sendKeys("1581");
+		
+		WebElement Num2=driver.findElement(By.name("number2")); 
+		Num2.sendKeys("2141");
+		
+		WebElement Num3=driver.findElement(By.id("calculateButton"));
+		Num3.click();
+		
+//		WebElement Num4=driver.findElement(By.id(""));
+//		Num4.sendKeys(args);
+		
+		WebElement Num4=driver.findElement(By.linkText("About"));
+		String link= Num4.getText();
+		System.out.println("THE LINK IS:"+link);
+		
+		WebElement Num5=driver.findElement(By.partialLinkText("Terms"));
+		String link1= Num5.getText();
+		System.out.println("THE LINK IS:"+link1);
+		
+		WebElement Num6=driver.findElement(By.partialLinkText("NUM"));
+		String link2= Num6.getText();
+		System.out.println("THE LINK IS:"+link2);
+	
+
+	}	
+	}
+
+}
