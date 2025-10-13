@@ -1,0 +1,30 @@
+package Seleniumconcept;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Websitelinks {
+
+	  public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://academybugs.com/contact-us-form/");
+		
+//		getting all list
+		
+		List<WebElement> link= driver.findElements(By.xpath("//li"));
+		
+//		getting list text
+		
+		for(WebElement links:link) {
+			System.out.println("The Links Text names is: "+links.getText());
+		}
+		
+
+	}
+
+}
+
