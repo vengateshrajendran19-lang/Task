@@ -1,0 +1,48 @@
+package Seleniumconcept;
+
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Windowhandling {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.hyrtutorials.com/p/window-handles-practice.html");
+		WebElement bt=driver.findElement(By.id("newWindowsBtn"));
+		bt.click();
+		String parentwindow=driver.getWindowHandle();
+		System.out.println("Parrent window ID is:"+parentwindow);
+		String url1=driver.getCurrentUrl();
+		System.out.println(url1);
+		Set<String>child1=driver.getWindowHandles();
+		
+		List<String>first=new ArrayList<String>(child1);
+		
+		for(String win:first) {
+			if(!win.equals(parentwindow)) {
+				driver.switchTo().window(first.get(1));
+				driver.manage().window().maximize();
+				String url2=driver.getCurrentUrl();
+				System.out.println(url2);
+				Thread.sleep(3000);
+				WebElement btn=driver.findElement(By.xpath("//input[@maxlength=\"10\"]"));
+				btn.sendKeys("vengatesh ");
+				
+				driver.switchTo().window(first.get(2));
+				driver.manage().window().maximize();
+				
+					
+				}
+		}
+	
+		driver.quit();
+		
+
+	}
+
+}
