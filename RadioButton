@@ -1,0 +1,75 @@
+package Seleniumconcept;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+public class RadioButton {
+
+	public static void main(String[] args) throws InterruptedException{
+	WebDriver driver=new ChromeDriver();
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(30));
+	driver.get("https://practice.expandtesting.com/radio-buttons");
+	List<WebElement> elements = driver.findElements(By.xpath("//div//label"));
+	
+	for (WebElement webElement : elements) {
+		
+//		for blue color
+		
+	if(webElement.getText().equalsIgnoreCase("blue")) {
+	WebElement until = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div//label")));
+	System.out.println("the selected color is: "+webElement.getText());
+	webElement.click();
+		
+		}
+	
+//	for red color
+	
+	if(webElement.getText().equalsIgnoreCase("red")) {
+		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div//label")));
+		System.out.println("the selected color is: "+webElement.getText());
+		webElement.click();
+			
+			}	
+
+//	for yellow color
+	
+	if(webElement.getText().equalsIgnoreCase("yellow")) {
+		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div//label")));
+		System.out.println("the selected color is: "+webElement.getText());
+		webElement.click();
+			
+			}	
+	
+//	//	for black  color
+	
+	if(webElement.getText().equalsIgnoreCase("black")) {
+		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div//label")));
+		System.out.println("the selected color is: "+webElement.getText());
+		webElement.click();
+			
+			}
+	
+//	for green color
+	
+	
+	if(webElement.getText().equalsIgnoreCase("green")) {
+		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div//label")));
+		System.out.println("the selected color is: "+webElement.getText());
+		webElement.click();
+		
+			}
+	}
+	
+
+	}
+
+}
